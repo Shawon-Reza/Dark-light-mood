@@ -22,3 +22,10 @@ function DarkModeButton() {
 export default DarkModeButton;
 
 ```
+# index.css
+```jsx
+
+/* This line is required in Tailwind v4 — without it, dark mode toggle won’t work from the website (it only works using device theme). */
+@custom-variant dark (&:is(.dark *));
+
+```
