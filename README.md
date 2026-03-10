@@ -75,3 +75,8 @@ export const useDarkMode = () => useContext(ThemeContext);
   </StrictMode>,
 
 ```
+# use like this on classename ="dark:text-gray-300"
+```jsx
+dark:text-gray-300 
+
+```
