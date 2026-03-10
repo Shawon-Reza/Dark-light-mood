@@ -63,3 +63,15 @@ export const ThemeProvider = ({ children }) => {
 export const useDarkMode = () => useContext(ThemeContext); 
 
 ```
+
+# main.jsx
+
+```jsx
+ <StrictMode>
+    <ThemeProvider>
+      <ToastContainer />
+      <RouterProvider router={router} />
+    </ThemeProvider>
+  </StrictMode>,
+
+```
