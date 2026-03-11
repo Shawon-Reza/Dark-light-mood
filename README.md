@@ -1,5 +1,3 @@
-# Dark-light-mood
-
 # Dark / Light Mode Implementation
 
 This project implements a **manual dark/light mode toggle** with persistence using:
