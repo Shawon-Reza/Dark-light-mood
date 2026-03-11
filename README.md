@@ -1,5 +1,46 @@
 # Dark-light-mood
 
+# Dark / Light Mode Implementation
+
+This project implements a **manual dark/light mode toggle** with persistence using:
+
+- React Context
+- localStorage
+- Tailwind CSS v4 dark mode variant
+
+## Features
+
+- Toggle between light & dark mode with a button
+- Preference saved in localStorage (persists across sessions & page reloads)
+- Smooth class-based dark mode using Tailwind's `dark:` prefix
+- Works without depending on system/OS color scheme preference
+
+## Key Files
+
+| File                        | Purpose                                                                 |
+|-----------------------------|-------------------------------------------------------------------------|
+| `src/Contexts/ThemeContext.jsx` | Theme state management + localStorage sync + `dark` class on `<html>`  |
+| `src/components/DarkModeButton.jsx` | Simple toggle button component                                       |
+| `src/index.css`             | Required custom variant setup for Tailwind v4 dark mode               |
+| `src/main.jsx`              | Wraps app with `<ThemeProvider>`                                       |
+
+## How to Use Dark Mode in Components
+
+Just add `dark:` prefix to any Tailwind class:
+
+```tsx
+<div className="bg-white dark:bg-gray-900 text-black dark:text-gray-100 p-6 rounded-lg">
+  This card automatically changes in dark mode!
+</div>
+
+<button className="bg-blue-600 dark:bg-blue-500 hover:bg-blue-700 dark:hover:bg-blue-600">
+  Works everywhere
+</button>
+```
+
+
+
+
 # DarkModeButton.jsx
 
 ```jsx
