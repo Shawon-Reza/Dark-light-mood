@@ -39,43 +39,7 @@ Just add `dark:` prefix to any Tailwind class:
 ```
 
 
-
-
-# Toggle Button example – DarkModeButton.jsx
-
-```jsx
-import { useDarkMode } from "../../Contexts/ThemeContext";
-
-
-function DarkModeButton() {
-    const { darkMode, setDarkMode } = useDarkMode();
-
-    return (
-        <button
-            onClick={() => setDarkMode(!darkMode)}
-            className="px-4 py-2 rounded bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white transition-colors"
-        >
-            {darkMode ? "Switch to Light" : "Switch to Dark"}
-        </button>
-    );
-}
-
-export default DarkModeButton;
-
-```
-# Tailwind v4 – important line in index.css
-```jsx
-
-/* This line is required in Tailwind v4 — without it, dark mode toggle won’t work from the website (it only works using device theme). */
-
-@custom-variant dark (&:where(.dark, .dark *));  /* ← this is the magic */
-/* @custom-variant dark (&:is(.dark *)); */
-
-/* Used one from this two */
-
-```
-
-# Theme Context – ThemeContext.jsx
+# 1. Theme Context – ThemeContext.jsx
 
 ```jsx
 import { createContext, useContext, useEffect, useState } from "react";
@@ -109,7 +73,7 @@ export const useDarkMode = () => useContext(ThemeContext);
 
 ```
 
-# Wrap your app – main.jsx
+# 2. Wrap your app – main.jsx
 
 ```jsx
  <StrictMode>
@@ -120,13 +84,49 @@ export const useDarkMode = () => useContext(ThemeContext);
   </StrictMode>,
 
 ```
+
+# 3. Tailwind v4 – important line in index.css
+```jsx
+
+/* This line is required in Tailwind v4 — without it, dark mode toggle won’t work from the website (it only works using device theme). */
+
+@custom-variant dark (&:where(.dark, .dark *));  /* ← this is the magic */
+/* @custom-variant dark (&:is(.dark *)); */
+
+/* Used one from this two */
+
+```
+
+# 4. Toggle Button example – DarkModeButton.jsx
+
+```jsx
+import { useDarkMode } from "../../Contexts/ThemeContext";
+
+
+function DarkModeButton() {
+    const { darkMode, setDarkMode } = useDarkMode();
+
+    return (
+        <button
+            onClick={() => setDarkMode(!darkMode)}
+            className="px-4 py-2 rounded bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white transition-colors"
+        >
+            {darkMode ? "Switch to Light" : "Switch to Dark"}
+        </button>
+    );
+}
+
+export default DarkModeButton;
+
+```
+
 # use like this on classename ="dark:text-gray-300"
 ```jsx
 dark:text-gray-300 
 
 ```
 
-# tailwind.config.cjs            / Maybe no needed
+# tailwind.config.cjs            / Not Needed on V4
 
 ```jsx
 module.exports = {
