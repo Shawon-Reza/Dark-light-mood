@@ -118,12 +118,6 @@ export default DarkModeButton;
 
 ```
 
-# use like this on classename ="dark:text-gray-300"
-```jsx
-dark:text-gray-300 
-
-```
-
 # tailwind.config.cjs            / Not Needed on V4
 
 ```jsx
