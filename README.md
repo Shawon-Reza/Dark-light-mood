@@ -37,7 +37,7 @@ Just add `dark:` prefix to any Tailwind class:
 ```
 
 
-# 1. Theme Context – ThemeContext.jsx
+### 1. Theme Context – ThemeContext.jsx
 
 ```jsx
 import { createContext, useContext, useEffect, useState } from "react";
@@ -71,7 +71,7 @@ export const useDarkMode = () => useContext(ThemeContext);
 
 ```
 
-# 2. Wrap your app – main.jsx
+### 2. Wrap your app – main.jsx
 
 ```jsx
  <StrictMode>
@@ -83,7 +83,7 @@ export const useDarkMode = () => useContext(ThemeContext);
 
 ```
 
-# 3. Tailwind v4 – important line in index.css
+### 3. Tailwind v4 – important line in index.css
 ```jsx
 
 /* This line is required in Tailwind v4 — without it, dark mode toggle won’t work from the website (it only works using device theme). */
@@ -95,7 +95,7 @@ export const useDarkMode = () => useContext(ThemeContext);
 
 ```
 
-# 4. Toggle Button example – DarkModeButton.jsx
+### 4. Toggle Button example – DarkModeButton.jsx
 
 ```jsx
 import { useDarkMode } from "../../Contexts/ThemeContext";
@@ -118,7 +118,7 @@ export default DarkModeButton;
 
 ```
 
-# tailwind.config.cjs            / Not Needed on V4
+### tailwind.config.cjs            / Not Needed on V4
 
 ```jsx
 module.exports = {
